@@ -1,5 +1,5 @@
 <template>
-    <div class="py-6 flex flex-col items-center justify-center h-full flex-1 bg-gray-50 text-gray-700">
+    <div class="py-6 flex flex-col items-center justify-center h-full flex-1  text-gray-700">
         <div class="max-w-md text-center p-6 bg-white shadow-lg rounded-lg">
             <div class="text-white mx-auto text-2xl mb-4 w-10 h-10 flex items-center justify-center rounded-full bg-yellow-500">
                 <FontAwesomeIcon :icon="faExclamation" />
