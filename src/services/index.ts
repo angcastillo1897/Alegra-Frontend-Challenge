@@ -4,8 +4,7 @@ const apiAlegra = axios.create({
     baseURL: 'https://api.alegra.com/api/v1/',
     headers: {
         'Content-Type': 'application/json',
-        Authorization: `Basic ${import.meta.env.VITE_ALEGRA_TOKEN}`,
-        "Access-Control-Allow-Origin": "*",
+        Authorization: `Basic ${import.meta.env.VITE_ALEGRA_TOKEN}`
     },
 
     timeout: 5000,
