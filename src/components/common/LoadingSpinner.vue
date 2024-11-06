@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col gap-2 items-center">
+    <div class="flex flex-col gap-2 items-center text-content">
         <FontAwesomeIcon :icon="faSpinner" spin class="w-8 h-8" />
         <p class="text-xl">{{ message }}</p>
     </div>

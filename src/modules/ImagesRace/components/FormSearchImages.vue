@@ -1,13 +1,13 @@
 <template>
     <form class="w-full mx-auto flex flex-col gap-2" @submit="onSubmit" @reset="onReset">
-        <label class="text-lg font-semibold" for="searchKeyWord">
+        <label class="text-lg font-semibold text-content" for="searchKeyWord">
             Buscar fotos e ilustraciones: </label>
         <div class="relative">
             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <FontAwesomeIcon class="text-gray-500" :icon="faMagnifyingGlass" />
+                <FontAwesomeIcon class="text-gray-400" :icon="faMagnifyingGlass" />
             </div>
             <input type="search" id="searchKeyWord"
-                class="block w-full p-4 ps-10 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50 outline-none border- focus:border-black"
+                class="block w-full p-4 ps-10 text-md text-content border border-gray-300 rounded-lg autofill:bg-accent-1 bg-accent-1 hover:bg-accent-1 focus:bg-accent-1 outline-none border- focus:border-black"
                 placeholder="Buscar..." required v-model.trim="searchKeyWord" />
             
             <div class="absolute end-2.5 bottom-2.5 flex gap-2">
@@ -62,7 +62,3 @@ const onReset = () => {
 }
 
 </script>
-
-<style scoped>
-
-</style>

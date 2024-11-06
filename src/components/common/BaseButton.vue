@@ -17,7 +17,7 @@ const {
 } = defineProps<{
     type?: 'button' | 'submit' | 'reset';
     size?: 'small' | 'medium' | 'large';
-    color?: 'primary' | 'secondary' | 'success' | 'danger' | 'not_found';
+    color?: 'primary' | 'secondary' | 'success' | 'danger' | 'not_found' | 'transparent';
     disabled?: boolean;
     fullWidth?: boolean;
 }>();
@@ -34,6 +34,7 @@ const computedClasses = computed(() => {
         primary: 'bg-teal-500 text-white hover:bg-teal-700 focus:ring-2 focus:ring-teal-200',
         secondary: 'bg-gray-500 text-white hover:bg-gray-600 focus:ring-gray-200',
         success: 'bg-green-500 text-white hover:bg-green-600 focus:ring-gray-200',
+        transparent: 'bg-transparent text-teal-500 hover:bg-gray-100 focus:ring-gray-200',
         danger: 'bg-red-500 text-white hover:bg-red-600 focus:ring-gray-200',
         not_found: 'bg-yellow-500 text-white hover:bg-yellow-600 focus:ring-gray-200',
     };

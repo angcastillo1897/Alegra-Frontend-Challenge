@@ -1,7 +1,7 @@
 <template>
     <div class="h-full flex flex-1 flex-col gap-6 justify-center items-center">
-        <p class="text-2xl font-semibold">Vendedor ganador: </p>
-        <p class="text-2xl font-semibold">{{sellerSelected?.name}}</p>
+        <p class="text-2xl font-semibold text-content">Vendedor ganador: </p>
+        <p class="text-2xl font-semibold text-content">{{sellerSelected?.name}}</p>
         <LoadingSpinner message="Creando la factura..." />
     </div>
 </template>

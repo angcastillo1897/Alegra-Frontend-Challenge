@@ -6,7 +6,11 @@
     </div>
   </template>
   <template v-else>
-    <RouterView />
+    <RouterView v-slot="{ Component }">
+      <transition name="page-opacity" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </RouterView>
   </template>
 </template>
 
@@ -19,4 +23,14 @@ import LoadingSpinner from './components/common/LoadingSpinner.vue';
 const {initializedSellers} = storeToRefs(useImagesRaceStore());
 </script>
 
-<style scoped></style>
+<style scoped>
+.page-opacity-enter-active,
+.page-opacity-leave-active {
+  transition: 600ms ease all;
+}
+
+.page-opacity-enter-from,
+.page-opacity-leave-to {
+  opacity: 0;
+}
+</style>

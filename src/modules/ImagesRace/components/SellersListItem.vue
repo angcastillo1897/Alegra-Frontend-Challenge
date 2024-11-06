@@ -1,8 +1,8 @@
 <template>
     <div v-if="loadingImg" 
-        class="rounded-lg shadow border border-gray-200 w-full max-w-sm bg-white p-4"
+        class="rounded-lg shadow border border-gray-200 w-full max-w-sm bg-bkgCard p-4"
     >   
-        <div class="w-full h-[300px] flex items-center justify-center bg-gray-200" 
+        <div class="w-full h-[300px] flex items-center justify-center bg-bkgCard text-content" 
         >
             <LoadingSpinner />
         </div>
@@ -10,7 +10,7 @@
         </div>
     </div>
     <div v-else-if="seller.image && !loadingImg" 
-        class="rounded-lg shadow border border-gray-200 w-full max-w-sm bg-white p-4 flex flex-col gap-3"
+        class="rounded-lg shadow border border-gray-200 w-full max-w-sm bg-bkgCard p-4 flex flex-col gap-3"
     >   
         <div class="w-full h-[300px] overflow-hidden flex items-center justify-center" 
         >
@@ -18,7 +18,7 @@
         </div>
         <div class="flex flex-col gap-3">
             <div class="flex justify-between gap-1">
-                <p class="text-lg font-normal">Vendedor: 
+                <p class="text-lg font-normal text-content">Vendedor: 
                     <span class="font-semibold">
                     {{ seller.name }}
                     </span>
@@ -35,12 +35,12 @@
                 </template>
             </div>
             <div class="flex justify-between gap-1">
-                <p class="text-lg font-normal">Puntos: 
+                <p class="text-lg font-normal text-content">Puntos: 
                     <span class="font-semibold">
                     {{ seller.score }}
                     </span>
                 </p>
-                <p class="text-lg font-normal">Puntos Faltantes: 
+                <p class="text-lg font-normal text-content">Puntos Faltantes: 
                     <span class="font-semibold">
                     {{ scoreLeft }}
                     </span>
@@ -49,17 +49,17 @@
         </div>
     </div>
     <div v-else 
-        class="rounded-lg shadow border border-gray-200 w-full max-w-sm bg-white p-4 flex flex-col gap-3"
+        class="rounded-lg shadow border border-gray-200 w-full max-w-sm bg-bkgCard p-4 flex flex-col gap-3"
     >   
         <div class="w-full h-[300px] flex items-center justify-center bg-black" 
         >
             <div>
-                <p class="text-center text-lg font-bold text-white">No se encontró coincidencias.</p>
+                <p class="text-center text-lg font-bold text-content">No se encontró coincidencias.</p>
             </div>
         </div>
         <div class="flex flex-col gap-3">
             <div class="flex justify-between gap-1">
-                <p class="text-lg font-normal">Vendedor: 
+                <p class="text-lg font-normal text-content">Vendedor: 
                     <span class="font-semibold">
                     {{ seller.name }}
                     </span>
@@ -69,12 +69,12 @@
                 </BaseButton>
             </div>
             <div class="flex justify-between gap-1">
-                <p class="text-lg font-normal">Puntos: 
+                <p class="text-lg font-normal text-content">Puntos: 
                     <span class="font-semibold">
                     {{ seller.score }}
                     </span>
                 </p>
-                <p class="text-lg font-normal">Puntos Faltantes: 
+                <p class="text-lg font-normal text-content">Puntos Faltantes: 
                     <span class="font-semibold">
                     {{ scoreLeft}}
                     </span>

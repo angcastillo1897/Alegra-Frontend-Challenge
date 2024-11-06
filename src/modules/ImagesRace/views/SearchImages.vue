@@ -7,7 +7,7 @@
     
             <section>
                 <div v-if="emptySearched">
-                    <p class="text-xl font-semibold">Busca tu imagen y selecciona la imagen que más te guste.</p>
+                    <p class="text-xl font-semibold text-content">Busca tu imagen y selecciona la imagen que más te guste.</p>
                 </div>
                 <SellersList v-else
                     :loadingImg="loadingSellersImgs"

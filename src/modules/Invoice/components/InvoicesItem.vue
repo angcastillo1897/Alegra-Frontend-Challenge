@@ -1,16 +1,16 @@
 <template>
 
-    <div class="flex flex-col gap-2 bg-white rounded-lg p-4 border-2 border-teal-500 shadow-md md:w-full md:flex-1 md:min-w-[400px]">
+    <div class="flex flex-col gap-2 bg-bkgCard rounded-lg p-4 border-2 border-teal-500 shadow-md md:w-full md:flex-1 md:min-w-[400px]">
         <div class="flex justify-between">
-            <h4 class="text-lg font-semibold">Factura: {{ invoice.id }}</h4>
-            <p class="text-md text-gray-500">{{ invoice.date }}</p>
+            <h4 class="text-lg font-semibold text-content">Factura: {{ invoice.id }}</h4>
+            <p class="text-md text-content">{{ invoice.date }}</p>
         </div>
         <div class="flex justify-between">
-            <p class="text-lg font-semibold">
+            <p class="text-lg font-semibold text-content">
                 Vendedor: 
                 {{ invoice.seller.name }}
             </p>
-            <p class="text-lg font-semibold">
+            <p class="text-lg font-semibold text-content">
                 Total: S/.{{ invoice.total }}
             </p>
         </div>

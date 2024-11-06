@@ -1,9 +1,9 @@
 <template>
-    <h4 class="text-2xl font-semibold px-4 pt-6">
+    <h4 class="text-2xl font-semibold px-4 pt-6 text-content">
         Factura de venta: {{ invoice.numberTemplate.fullNumber }}
     </h4> 
     <div class="flex-1 flex flex-col h-full px-4 overflow-x-auto md:items-center">
-        <div class="px-4 py-16 min-w-[780px] max-w-[780px] bg-white rounded-lg flex flex-col">
+        <div class="px-4 py-16 min-w-[780px] max-w-[780px] bg-bkgInvoice rounded-lg flex flex-col">
             <div class="flex place-content-end">
                 <p class="text-lg">No. {{ invoice.numberTemplate.fullNumber }}</p>
             </div>
