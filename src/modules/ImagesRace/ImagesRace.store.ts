@@ -34,7 +34,7 @@ export const useImagesRaceStore = defineStore('imagesRace', () => {
                 if (photos[index]) {
                     seller.image = {
                         id: photos[index].id,
-                        url: photos[index].src.original,
+                        url: photos[index].src.medium,
                         alt: photos[index].alt
                     };
                 } else {
