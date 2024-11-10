@@ -19,7 +19,7 @@ Link del proyecto https://alegra-frontend-challenge.netlify.app/
 - Transiciones entre páginas.
 - Cambio de temas de la aplicación, Dark and Light.
 
-## Técnologias
+## Tecnologías
 
 Vue3, TS, Pinia , Vue router, axios , tailwind, fontawesome, Vite, vueuse.
 Se desplego en Netlify.
