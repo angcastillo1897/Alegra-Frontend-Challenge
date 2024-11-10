@@ -16,11 +16,12 @@ export const useImagesRaceStore = defineStore('imagesRace', () => {
     const sumAllScores = computed(() => {
         return sellers.value.reduce((acc, seller) => acc + seller.score, 0);
     })
+    const sellersLength = computed(() => sellers.value.length);
     /* actions */
     const fetchImages = async (keyword: string) => {
         try {
             loadingSellersImgs.value = true;
-            const { photos } = await getImages(keyword);
+            const { photos } = await getImages(keyword, sellersLength.value);
             // console.log(photos);
 
             if (photos.length === 0) {
@@ -51,21 +52,29 @@ export const useImagesRaceStore = defineStore('imagesRace', () => {
 
     const fetchSellers = async () => {
         try {
+
+            const response = await getSellers();
             /* check if we have data in localStorage */
             const imagesRaceStoreSaved = localStorage.getItem('imagesRace')
             if (imagesRaceStoreSaved) {
                 const { loadingSellersImgs: loadingSellersImgsSaved, initializedSellers: initializedSellersSaved, sellers: sellersSaved } = JSON.parse(imagesRaceStoreSaved)
 
-                loadingSellersImgs.value = loadingSellersImgsSaved
-                initializedSellers.value = initializedSellersSaved
-                sellers.value = sellersSaved.map((seller: Seller) => ({
-                    ...seller,
-                    image: null
-                }))
-                return
-            }
+                const sellerIdsFromApi = response.map((seller: SellerResponse) => seller.id).sort();
+                const sellerIdsFromLocalStorage = sellersSaved.map((seller: Seller) => seller.id).sort();
+                // check if sellerIdsFromApi and sellerIdsFromLocalStorage are equal ids of sellers
+                if (JSON.stringify(sellerIdsFromApi) === JSON.stringify(sellerIdsFromLocalStorage)) {
+                    // console.log('we have data in localStorage');
+                    loadingSellersImgs.value = loadingSellersImgsSaved
+                    initializedSellers.value = initializedSellersSaved
+                    const sellersListFromLocalStorage = sellersSaved.map((seller: Seller) => ({
+                        ...seller,
+                        image: null
+                    }))
+                    setSellers(sellersListFromLocalStorage)
 
-            const response = await getSellers();
+                    return
+                }
+            }
 
             const sellersList = response.map((seller: SellerResponse) => ({
                 id: seller.id,
@@ -73,7 +82,7 @@ export const useImagesRaceStore = defineStore('imagesRace', () => {
                 image: null,
                 score: 0,
                 imagesSelected: [],
-            }));
+            })) || [];
 
             setSellers(sellersList);
         } catch (error) {
@@ -109,6 +118,7 @@ export const useImagesRaceStore = defineStore('imagesRace', () => {
         initializedSellers,
         sellers,
         sumAllScores,
+        sellersLength,
         fetchImages,
         fetchSellers,
         addScore,

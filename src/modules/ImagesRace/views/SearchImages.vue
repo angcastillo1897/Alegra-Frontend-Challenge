@@ -3,10 +3,13 @@
         <template v-if="!loadingCreationInvoice">
             <BannerSection />
     
-            <FormSearchImages v-model:emptySearched="emptySearched" />
+            <FormSearchImages v-model:emptySearched="emptySearched" :disabledFields="sellersLength===0"/>
     
             <section>
-                <div v-if="emptySearched">
+                <div v-if="sellersLength===0">
+                    <p class="text-xl font-semibold text-content">No cuenta con vendedores aún.</p>
+                </div>
+                <div v-else-if="emptySearched">
                     <p class="text-xl font-semibold text-content">Busca tu imagen y selecciona la imagen que más te guste.</p>
                 </div>
                 <SellersList v-else
@@ -36,7 +39,7 @@ const router = useRouter()
 
 const ImagesRaceStore = useImagesRaceStore();
 const {resetSellerSelected} = ImagesRaceStore;
-const {sellers,loadingSellersImgs,sumAllScores,sellerSelected} = storeToRefs(ImagesRaceStore);
+const {sellers,loadingSellersImgs,sumAllScores,sellerSelected,sellersLength} = storeToRefs(ImagesRaceStore);
 
 const InvoiceStore = useInvoiceStore();
 const {createInvoice} = InvoiceStore;
