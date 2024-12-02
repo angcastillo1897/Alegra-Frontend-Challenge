@@ -25,10 +25,6 @@ Vue3, TS, Pinia , Vue router, axios , tailwind, fontawesome, Vite, vueuse.
 Se desplego en Netlify.
 Organización del proyecto: Modular.
 
-## 
-
-Fue un reto en el que intente demostrar mis buenas prácticas de programación y le agregue algunas funcionalidades extra para añadirle más complejidad al proyecto, fue retador  pero me sentí cómodo desarrollando con las tecnologías que suelo emplear en mi día a día. Aprendí un poco del api de Alegra y tambien del api de Pexels que use para obtener las imágenes. Disfrute mucho de hacer el reto para Alegra y espero formar parte de su equipo :) .
-
 ## Project Setup
 
 ```sh
